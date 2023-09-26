@@ -102,7 +102,7 @@ Extensões:
 2c - Se o plano do cliente apresentado no site for boxe: adiciona o treino de boxe
 2e - Se o plano do cliente apresentado no site for boxe mais musculação: adiciona o treino de musculação e boxe
 
-Ator 3: Gerente
+//Ator 3: Gerente
 
 Realiza Cadastro 
 Fluxo normal:
