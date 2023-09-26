@@ -1,6 +1,9 @@
 Casos de Uso para Site de Academia (diagrama)
+
 Ator 1: Cliente
+
 Acessar site
+
 Fluxo normal:
 1 - Cliente acessa o URL do site
 2 - Cliente informa login
@@ -25,7 +28,9 @@ Extensões:
 2b - Caso o plano seja boxe, o site apresenta apenas os treinos de boxe
 2c - Caso o plano seja boxe boxe e musculação, o site apresenta os treinos de musculação e boxe
 3a - 
+
 Acessar Mensalidade
+
 Fluxo normal:
 1 - Cliente acessa o site (include)
 2 - Cliente acessa a aba de mensalidade
@@ -39,12 +44,16 @@ Extensões:
 5b - Se o pagamento for dinheiro: site gera boleto
 5c - Se o pagamento for cartão de débito: site apresenta as opções para inserir os dados do cartão
 5d - Se o pagamento for cartão de crédito: site apresenta as opções para inserir dados do cartão
+
 Acessar Frequência
+
 Fluxo normal:
 1 - Cliente acessa o site
 
 Extensões:
+
 Acessar loja
+
 Fluxo normal:
 1 - Gerenciamento da loja
 2 - Cliente acessa o site (include)
@@ -92,7 +101,9 @@ Extensões:
 2a - Se o plano do cliente apresentado no site for musculação: adiciona o treino de musculação
 2c - Se o plano do cliente apresentado no site for boxe: adiciona o treino de boxe
 2e - Se o plano do cliente apresentado no site for boxe mais musculação: adiciona o treino de musculação e boxe
+
 Ator 3: Gerente
+
 Realiza Cadastro 
 Fluxo normal:
 1 - Gerente verifica se o cadastro é de um cliente ou de um instrutor
@@ -113,16 +124,18 @@ Extensões:
 5b - Se o plano selecionado for musculação mais cardio: adiciona esse plano ao site, seleciona o instrutor para musculação e o valor deste plano
 5c - Se o plano selecionado for boxe: adiciona esse plano ao site, seleciona o instrutor para o treino de boxe e o valor deste plano
 5d - Se o plano selecionado for boxe mais cardio: adiciona esse plano ao site, seleciona o instrutor para o treino de boxe e o valor deste plano
-
-
 5e - Se o plano selecionado for boxe mais musculação: adiciona esse plano ao site, seleciona o instrutor para o treino de boxe, o instrutor para a musculação e o valor deste plano
-5f - Se o plano selecionado for boxe mais musculação mais cardio: adiciona esse plano ao site, seleciona o instrutor para o treino de boxe, o instrutor para a musculação e o valor deste plano 7
+5f - Se o plano selecionado for boxe mais musculação mais cardio: adiciona esse plano ao site, seleciona o instrutor para o treino de boxe, o instrutor para a musculação e o valor deste plano 
+
+
 Gerenciamento da loja
 Fluxo normal:
 1 - Gerente cadastra produto
 2 - Gerente retira produtos
 3 - Gerente verifica estoque 
 4 - Gerente define preço de produto
+
+
 Ator 4: Site
 Verificar Token
 Fluxo normal:
