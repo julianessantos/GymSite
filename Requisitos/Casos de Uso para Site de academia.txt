@@ -1,131 +1,129 @@
-Casos de Uso para App Comanda Digital (diagrama)
-
+Casos de Uso para Site de Academia (diagrama)
 Ator 1: Cliente
-Abrir Conta
+Acessar site
 Fluxo normal:
-1 - Cliente informa nome 
-2 - Cliente informa CPF
-3 - Cliente informa número da Mesa
-4 - Garçom autoriza abertura de conta
-5 - Sistema abre uma conta para o cliente na mesa solicitada
+1 - Cliente acessa o URL do site
+2 - Cliente informa login
+3 - Cliente informa senha
+4 - Cliente acessa site
+5 - Cliente visualiza dados
+
 Extensões:
-2a - Se CPF for inválido, solicitar novo CPF
-3a - Se número da mesa for inválida, solicitar novo número da mesa
-Chamar Garçom
+2a - Se o cliente informa o login errado: o site informa que login está incorreto e solicita reenvio do mesmo
+3a - Se o cliente informa a senha errada: o site informa que a senha está incorreta e solicita reenvio da mesma
+Acessar treinos
 Fluxo normal:
-1 - Cliente solicita a presença do garçom
-2 - Sistema verifica token
-3 - Sistema notifica o garçom
+1 - Cliente acessa o site ( include)
+2 - Cliente abre a aba de treinos
+3 - Cliente tem acesso a lista de treinos disponíveis
+4 - Cliente acessa um treino da lista
+5 - Ciente vê a forma correta de execução do treino
+6 - Cliente vê a quantidade de séries do treino 
+
 Extensões:
-2a - Se o token estiver inválido, o sistema deve informar o erro ao cliente 
-Fazer Pedido
+2a - Caso o plano seja musculação, o site apresenta apenas os treinos de musculação
+2b - Caso o plano seja boxe, o site apresenta apenas os treinos de boxe
+2c - Caso o plano seja boxe boxe e musculação, o site apresenta os treinos de musculação e boxe
+3a - 
+Acessar Mensalidade
 Fluxo normal:
-1 - Cliente escolhe o item
-2 - Sistema verifica token
-3 - Sistema verifica disponibilidade do item no estoque
-4 - Pedido é adicionado ao Sistema
+1 - Cliente acessa o site (include)
+2 - Cliente acessa a aba de mensalidade
+3 - Cliente verifica a data de validade da inscrição
+4 - Cliente solicita pagamento via site
+5 - Cliente informa o tipo de pagamento 
+6 - Site renova a inscrição por mais um mês
+
 Extensões:
-2a - Se o token estiver inválido, o sistema deve informar o erro ao cliente 
-4a - Se item for comida, o sistema deve adicionar pedido à fila da Cozinha
-4b - Se item for bebida, o sistema deve adicionar pedido à fila do Bar
-Pagar Conta
+5a - Se o pagamento for PIX: site gera QR Code 
+5b - Se o pagamento for dinheiro: site gera boleto
+5c - Se o pagamento for cartão de débito: site apresenta as opções para inserir os dados do cartão
+5d - Se o pagamento for cartão de crédito: site apresenta as opções para inserir dados do cartão
+Acessar Frequência
 Fluxo normal:
-1 - Cliente solicita o custo do consumo da mesa
-2 - Cliente seleciona opção de pagamento
-3 - Sistema ou Garçom processa pagamento
-4 - Sistema encerra a conta
-5 - Sistema remove token
+1 - Cliente acessa o site
+
 Extensões:
-2a - Se opção for dinheiro, Sistema notifica o Garçom para receber o dinheiro
-2b - Se opção for PIX, Sistema apresenta QR Code 
-2c - Se opção for Cartão de Crédito, Sistema apresenta opções de notificar o Garçom para passar o cartão ou inserir os dados do cartão no aplicativo
-2d - Se opção for Cartão de Débito, Sistema apresenta opções de notificar o Garçom para passar o cartão ou inserir os dados do cartão no aplicativo
-
-
-Ator 2: Garçom
-Autenticar Usuário
+Acessar loja
 Fluxo normal:
-1 - Usuário fornece login e senha
-2 - Sistema gera token para o usuário
+1 - Gerenciamento da loja
+2 - Cliente acessa o site (include)
+3 - Cliente acessa a aba de compras
+4 - Cliente navega pelos produtos
+5 - Cliente escolhe o produto
+6 - Cliente verifica a disponibilidade do produto
+7 - Cliente adiciona o produto ao carrinho
+8 - Cliente fecha o carrinho
+9 - Cliente solicita pagamento da compra via site
+10 - Cliente informa o tipo de pagamento 
+
 Extensões:
-1a - Se login e senha não forem válidos, o Sistema deve informar o erro ao usuário e solicitar as informações novamente
-
-
-Autorizar Abertura de Conta
-Pré-condição: estar autenticado
+6a - Caso não tenha o produto disponível no estoque, o site deve apresentar uma mensagem de “produto em falta”
+10a - Se o pagamento for PIX: site gera QR Code 
+10b - Se o pagamento for dinheiro: site gera boleto
+10c - Se o pagamento for cartão de débito: site apresenta as opções para inserir os dados do cartão
+10d - Se o pagamento for cartão de crédito: site apresenta as opções para inserir dados do cartão
+Ator 2: Instrutor
+Acessar site
 Fluxo normal:
-1 - Sistema verifica token do Garçom
-2 - Garçom verifica se o nome do cliente está correto na solicitação (interagindo com o mesmo)
-3 - Garçom solicita geração de token para o cliente ao Sistema
-4 - Sistema abre conta para conta para o cliente
+1 - Instrutor acessa o site
+2 - Instrutor informa login 
+3 - Instrutor informa senha
+4 - Instrutor acessa o site
+
 Extensões:
-2a - Se o nome estiver incorreto, o próprio garçom corrige
-Atender Pedido do Bar
+2a - Se o instrutor informa o login errado: o site informa que login está incorreto e solicita reenvio do mesmo
+3a - Se o instrutor informa a senha errada: o site informa que a senha está incorreta e solicita reenvio da mesma
+Cadastrar avaliação corporal do cliente
 Fluxo normal:
-1 - Garçom seleciona e remove o próximo pedido da Fila do Bar
-2 - Garçom leva o pedido à mesa
-3 - Sistema adiciona o pedido à Conta
-Cancelar Pedido do Bar
+1 - Instrutor acessa o site
+2 - Instrutor visualiza a lista de clientes cadastrados para ele
+4 - Instrutor seleciona o cliente
+4 - Instrutor cadastra a ficha de avaliação física do cliente
+Cadastrar treino do cliente
 Fluxo normal:
-1 - Garçom seleciona Conta
-2 - Sistema apresenta todos os pedidos do Bar relacionados àquela Conta 
-3 - Garçom seleciona e remove o pedido
-Cancelar Pedido da Cozinha
-Fluxo normal:
-1 - Garçom seleciona Conta
-2 - Sistema apresenta todos os pedidos da Cozinha relacionados àquela Conta  
-3 - Garçom seleciona e remove o pedido
+1 - Instrutor acessa o site
+2 - Instrutor visualiza a lista de clientes cadastrados para ele
+3 - Instrutor seleciona o cliente
+4 - Instrutor visualiza o plano do cliente
+5 - Instrutor cadastra o treino específico para o plano do cliente
 
-
-Ator 3: Cozinheiro
-Autenticar Usuário
-Fluxo normal:
-1 - Usuário fornece login e senha
-2 - Sistema gera token para o usuário
 Extensões:
-1a - Se login e senha não forem válidos, o Sistema deve informar o erro ao usuário e solicitar as informações novamente
-Atender Pedido da Cozinha
+2a - Se o plano do cliente apresentado no site for musculação: adiciona o treino de musculação
+2c - Se o plano do cliente apresentado no site for boxe: adiciona o treino de boxe
+2e - Se o plano do cliente apresentado no site for boxe mais musculação: adiciona o treino de musculação e boxe
+Ator 3: Gerente
+Realiza Cadastro 
 Fluxo normal:
-1 - Cozinheiro seleciona e remove o próximo pedido da Fila da Cozinha
-2 - Cozinheiro prepara o pedido
-3 - Cozinheiro adiciona pedido à Fila do Bar com Prioridade Alta
+1 - Gerente verifica se o cadastro é de um cliente ou de um instrutor
+2 - Gerente solicita login e senha para criação do usuário no aplicativo
+2 - Cliente ou instrutor informa o nome
+3 - Cliente ou instrutor informa o CPF
+4 - Cliente ou instrutor informa a data de nascimento
+5 - Cliente informa o tipo de plano
+6 - Gerente solicita a forma de pagamento
+7 - Gerente permite que o cliente atualize as informações de contato após o cadastro (Celular, email)
+
+Extensões:
+1a - Se o cadastro for de um instrutor, verificar se este é  instrutor de boxe ou musculação 
+2a - Se o login já existir o gerente deve reativar o login 
+3a - Se o CPF informado for invalido, solicite que este seja inserido novamente 
+4a -  Se a data de nascimento informada for uma data após o dia do cadastramento, solicite que a data seja inserida novamente 
+5a - Se o plano selecionado for musculação: adiciona esse plano ao site, seleciona o instrutor para musculação e o valor deste plano
+5b - Se o plano selecionado for musculação mais cardio: adiciona esse plano ao site, seleciona o instrutor para musculação e o valor deste plano
+5c - Se o plano selecionado for boxe: adiciona esse plano ao site, seleciona o instrutor para o treino de boxe e o valor deste plano
+5d - Se o plano selecionado for boxe mais cardio: adiciona esse plano ao site, seleciona o instrutor para o treino de boxe e o valor deste plano
 
 
-Ator 4: Gerente
-Adicionar Item ao Cardápio
+5e - Se o plano selecionado for boxe mais musculação: adiciona esse plano ao site, seleciona o instrutor para o treino de boxe, o instrutor para a musculação e o valor deste plano
+5f - Se o plano selecionado for boxe mais musculação mais cardio: adiciona esse plano ao site, seleciona o instrutor para o treino de boxe, o instrutor para a musculação e o valor deste plano 7
+Gerenciamento da loja
 Fluxo normal:
-1 - Gerente adiciona nome do item
-2 - Gerente adiciona descrição do item
-3 - Gerente adiciona foto ou vídeo do item
-4 - Gerente adiciona categoria do item
-5 - Gerente adiciona valor do item
-6 - Gerente adiciona estoque do item
-7 - Sistema incorpora item ao Cardápio e ao Estoque
-
-
-Remover Item do Cardápio
-Fluxo normal:
-1 - Gerente lista itens do Cardápio
-2 - Gerente seleciona itens do Cardápio
-3 - Sistema remove itens do Cardápio
-
-
-Editar Item do Cardápio
-Fluxo normal:
-1 - Gerente lista itens do Cardápio
-2 - Gerente seleciona item do Cardápio
-3 - Gerente edita os valores do item do Cardápio
-4 - Sistema salva novos valores para aquele item do Cardápio
-
-
-Atualizar Estoque de Item do Cardápio
-Fluxo normal:
-1 - Gerente lista itens do Cardápio
-2 - Gerente seleciona item do Cardápio
-3 - Gerente edita o estoque do item do Cardápio
-4 - Sistema salva novo valor de estoque para aquele item do Cardápio
-Ator 5: Sistema
-
+1 - Gerente cadastra produto
+2 - Gerente retira produtos
+3 - Gerente verifica estoque 
+4 - Gerente define preço de produto
+Ator 4: Site
 Verificar Token
 Fluxo normal:
 1 - Sistema verifica assinatura do token
@@ -134,43 +132,25 @@ Fluxo normal:
 4 - Sistema retorna que token é válido
 Extensões:
 1a - Se assinatura estiver incorreta, o Sistema notifica que o token contém erro de assinatura
-2a - Se data validade estiver fora do prazo, o Sistema notifica que o prazo de validade do token expirou
-3a - Se token contiver um papel inválido ou incompatível com o usuário solicitante, o Sistema notifica que o papel é inválido ou incompatível
 
 
-Gerar Token
-Fluxo normal:
-1 - Sistema atribui ao token a data de validade fornecida
-2 - Sistema atribui o papel fornecido
-3 - Sistema assina token com segredo do sistema
-4 - Sistema retorna token
-Extensões:
-1a - Se a data fornecida for inválida, o Sistema solicita nova data
-2a - Se o papel fornecido for inválido, o Sistema solicita novo papel
-
-
-Autenticar Usuário
-Fluxo normal:
-1 - Usuário fornece Token
-2 - Sistema Verifica o Token fornecido
-2 - Se usuário fornecer login e senha, então o Sistema Verifica o Token
-2 - Usuário fornece senha
-3 - Sistema gera token para o usuário
-Extensões:
-1a - Se usuário não fornecer Token, Sistema deve solicitar login e senha
-2a - Se usuário não fornecer Token, Sistema deve Gerar Token usando login e senha fornecidos
-
-
-Verificar Disponibilidade de Estoque
-Fluxo normal:
-1 - Sistema verifica disponibilidade de item
-2 - Sistema retorna que há disponibilidade
-Extensões:
-1a - Se não houver disponibilidade, o Sistema notifica o gerente, e retorna que o item está indisponível
+USs (User Story):
+Cliente:
+Gerente:
+Eu como gerente, desejo cadastrar usuários do site (cliente e instrutor)
+Eu como gerente, desejo adicionar e remover produtos da loja
+Instrutor:
+Eu como instrutor, desejo cadastrar o treinos dos clientes
+Eu como instrutor, desejo cadastrar avaliação corporal dos clientes
 
 
 
 
+Um site de uma academia, no qual os clientes podem acessar os treinos e avaliações, realizar pagamento e comprar produtos disponíveis na loja da academia.
 
+
+
+
+O presente repositório tem como funcionalidade aplicar na prática a parte teórica estudada na disciplina de Projeto e Engenharia de Software, lecionada pelo docente Eduardo Falção. O projeto intitulado _"Gymsyte"consiste em um site para academia que tem como finalidade ser uma forma do cliente editar seus dados, acompanhar seus treinos, frequência e avaliação corporal, ele também pode, efetuar pagamentos de sua inscrição e realizar compras de produtos disponibilizados pela academia. O site também disponibiliza um acesso para o instrutor da academia, onde é possível cadastrar a avaliação corporal do cliente atrelado a ele e adicionar os treinos do mesmo. O site consta com um perfil para o gerente onde o mesmo consegue cadastrar o cliente e o instrutor e fazer o gerenciamento da loja online disponível no site.
 
 
