@@ -98,8 +98,12 @@ Extensões:
 5a - Se o plano do cliente apresentado no site for musculação: adiciona o treino de musculação
 5c - Se o plano do cliente apresentado no site for boxe: adiciona o treino de boxe
 5e - Se o plano do cliente apresentado no site for boxe mais musculação: adiciona o treino de musculação e boxe
+
+
+
 Ator 3: Gerente
-Realiza Cadastro do Gerente
+Realiza Cadastro do Cliente
+
 Fluxo normal:
 1 - Gerente verifica se o cadastro é de um cliente ou de um instrutor
 2 - Gerente solicita login e senha para criação do usuário no site
