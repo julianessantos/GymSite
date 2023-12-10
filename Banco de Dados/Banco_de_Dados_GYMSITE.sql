@@ -1,3 +1,7 @@
+create database gymsite
+default character set utf8mb4
+default collate utf8mb4_general_ci;
+
 -- AREA PARA TABELAS DO SISTEMA GYMSITE -------------------------
 
 -- Criando a tabela USUARIOS do sistema
@@ -10,6 +14,7 @@ email varchar(30),
 tipo_de_usuario enum('C','P','G'), 
 primary key (cpf)
 ) default charset=utf8mb4;
+
 -- Criando a tabela CLIENTE do sistema
 create table CLIENTE (
 id_cliente int not null auto_increment,
@@ -21,6 +26,7 @@ primary key (id_cliente),
 foreign key (personal_escolhido) references personal(matricula_personal),
 foreign key (tipo_de_usuario) references usuario(tipo_de_usuario)
 ) default charset=utf8mb4;
+
 -- Criando a tabela PERSONAL do sistema
 create table PERSONAL (
 id_personal int not null auto_increment,
@@ -79,6 +85,19 @@ primary key (id_compra),
 foreign key (id_produto) references PRODUTO(id),
 foreign key (quem_comprou) references USUARIO(cpf)
 ) default charset=utf8mb4;
+
+-- Criando a tabela DESC_TREINOS
+create table DESC_TREINOS (
+id_desc_treinos int not null auto_increment,
+tipo_de_treino int not null,
+exc1 varchar(30) not null,
+exc2 varchar(30) not null,
+exc3 varchar(30) not null,
+serie int not null,
+rept int not null,
+primary key (id_desc_treinos),
+foreign key (tipo_de_treino) references TREINO(id_treino)
+) default charset=utf8mb4;
 --------------------------------------------------------------------------------------------------------------------
 
 -- Criano usuarios para a tabela usuarios
@@ -119,6 +138,10 @@ insert into COMPRAS values (1,'CAMISETA',1,4,'10077858450');
 insert into COMPRAS values (2,'CAMISETA',1,1,'00000000001');
 insert into COMPRAS values (3,'CAMISETA',4,1,'00000000002');
 
+-- Inserindo um treino na tabela DESC_TREINOS]
+select * from desc_treinos;
+insert into DESC_TREINOS values (1, 1, 'extensora', 'puxada romana', 'leg press 45', 4, 15);
+
 -- --------------------- EXIBINDO DADOS --------------------------------------------------------
 -- EXIBINDO OS USUARIOS DO SISTEMA ---
 select * from USUARIO;
@@ -151,6 +174,9 @@ add column medida_peito decimal (5,2),
 add column medida_braco decimal (5,2),
 add column medida_coxa decimal (5,2),
 add column medida_quadril decimal (5,2);
+
+alter table USUARIO
+add column senha varchar(10);
 
 -- ------------------------- TESTES --------------------------
 select * from USUARIO where tipo_de_usuario='C';
