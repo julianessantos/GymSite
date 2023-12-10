@@ -1,0 +1,78 @@
+#calendario-container {
+    display: flex;
+
+}
+
+#calendario {
+    display: grid;
+    grid-template-columns: repeat(7, 0.5fr);
+    text-align: center;
+    background: #c12d2d;
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    border-radius: 20px;
+    grid-row-gap: 1rem;
+    margin: 50px 50px ;
+    
+}
+
+.dia {
+    cursor: pointer;
+    text-align: center;
+    padding: 5px;
+    margin: 0.2px;
+}
+
+.verde {
+    background-color: green;
+    color: white;
+    border-radius: 15px 15px 15px 15px;
+}
+
+.vermelho {
+    background-color: red;
+    color: white;
+    border-radius: 15px 15px 15px 15px;
+}
+
+.day{
+    color:  #B89292 ;
+    font-size: .999em;
+	font-weight: 500;
+	justify-self: center;
+}
+
+.month-name {
+    font-size: 28px;
+    font-weight: bold;
+}
+body {
+    margin: 20;
+    font-family: "Roboto", sans-serif;
+    background: #232530;
+    justify-content: center;
+}
+
+body * {
+    box-sizing: border-box;
+    width: 80%;
+    padding: 10px 10px;
+
+}
+h1 {
+    font-size: 4vw;
+    color: #C43F3F;
+    font-weight: bold;
+    text-align: center;
+}
+h3 {
+    font-size: 2vw;
+    color: #B89292;
+    font-weight: bold;
+    text-align: center;
+}
+
+img {
+    width: 150vw;
+    margin: 20px 15px; 
+
+}
