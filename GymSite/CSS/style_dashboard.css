@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Open+Sans:wght@300;400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    background: #343843;
+}
+
+.menu{
+    position: fixed;
+    height: 100%;
+    background: #343843;
+    width: 80px;
+    overflow: hidden;
+    box-shadow: 15px 15px 25px #00000056;
+    transition: 0.5s;
+}
+
+.menu.active{
+    width: 300px;
+}
+
+.toggle{
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    width: 50px;
+    height: 50px;
+    background: #C43F3F;
+    border-radius: 50%;
+    box-shadow: 5px 5px 10px #00000056;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.toggle::before{
+    content: '';
+    position: absolute;
+    width: 26px;
+    height: 3px;
+    border-radius: 3px;
+    background: #343843;
+    transform: translateY(-5px);
+    transition: 1s;
+}
+
+.toggle::after{
+    content: '';
+    position: absolute;
+    width: 26px;
+    height: 3px;
+    border-radius: 3px;
+    background: #343843;
+    transform: translateY(5px);
+    transition: 1s;
+}
+
+.menu.active .toggle::before{
+    transform: translateY(0px) rotate(-405deg);
+}
+
+.menu.active .toggle::after{
+    transform: translateY(0px) rotate(225deg);
+}
+
+.menu ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.menu ul li{
+    position: relative;
+    list-style: none;
+    width: 100%;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.menu ul li:hover{
+    background: #fff;
+}
+
+.menu ul li:nth-child(1){
+    top: 20px;
+    margin-bottom: 40px;
+    background: none;
+}
+
+.menu ul li a{
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: #fff;
+}
+
+.menu ul li:hover a, .menu ul li.hovered a{
+    color: #fff;
+}
+
+.menu ul li:hover:not(:first-child) a{
+    color: #343843;
+}
+
+.menu ul li:hover a::before,
+.menu ul li.hovered a::before{
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -20px;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border-bottom-right-radius: 20px;
+    box-shadow: 7.5px 7.5px 0 7.5px #fff;
+    pointer-events: none;
+}
+
+.menu ul li:hover a::after,
+.menu ul li.hovered a::after{
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border-top-right-radius: 20px;
+    box-shadow: 7.5px -7.5px 0 7.5px #fff;
+}
+
+.menu ul li.hovered {
+    background: #fff; /* Adapte o estilo conforme necessário */
+}
+
+.menu ul li a .icon{
+    position: relative;
+    display: block;
+    min-width: 70px;
+    height: 52px;
+    line-height: 70px;
+    text-align: center;
+}
+
+.menu ul li a .icon ion-icon{
+    font-size: 1.5em;
+}
+
+.menu ul li a .title{
+    position: relative;
+    display: block;
+    padding: 0 15px;
+    height: 50px;
+    line-height: 50px;
+    text-align: start;
+    white-space: nowrap;
+}
+
+
+/* main */
+.main {
+    position: relative;
+    width: calc(100% - 300px);
+    left: 300px;
+    min-height: 100vh;
+    background: #343843;
+    transition: 0.5s;
+    padding: 10px;
+}
+
+.topbar{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.user{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.user img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

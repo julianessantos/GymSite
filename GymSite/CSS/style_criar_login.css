@@ -110,6 +110,14 @@ body{
     cursor: pointer;
 }
 
+.continue-button button input{
+    width: 100%;
+    border: none;
+    background-color: #C43F3F;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 .continue-button button::hover{
     background-color: #c45b5b;
 }
