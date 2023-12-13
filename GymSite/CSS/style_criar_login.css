@@ -42,6 +42,7 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    flex-wrap: wrap;
     background-color: #B89292;
     padding: 3rem;
 }
@@ -74,6 +75,12 @@ body{
     margin-bottom: 0.2rem
 }
 
+/*.form .select  {
+    display: flex;
+    flex-wrap: wrap;
+
+}*/
+
 .input-box input{
     margin: 0.5rem 0;
     padding: 0.8rem 1.0rem;
@@ -98,6 +105,41 @@ body{
 
 .input-box input::placeholder{
     color: #000000be;
+}
+
+/*#category-select label{
+    font-size: 0.75rem;
+    letter-spacing: 0.0225rem;
+}
+
+.select{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+#category-select{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}*/
+
+#select-button{
+    margin-top: .5rem;
+    display: flex;
+    padding: 0.75rem;
+    align-items: center;
+    justify-content: space-between;
+
+    border-radius: .375rem;
+    border: 1px solid #C43F3F;
+    background-color: #ffff;
 }
 
 .continue-button button{

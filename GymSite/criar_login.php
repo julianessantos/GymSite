@@ -67,12 +67,12 @@
 
                     <div class="input-box">
                         <label for="telefone">Telefone</label>
-                        <input type="tel" name="telefone" id="telefone" placeholder="(xx) 9xxxx-xxxx" required>
+                        <input type="tel" name="telefone" maxlength="11" id="telefone" placeholder="(xx)9xxxx-xxxx" required>
                     </div>
 
                     <div class="input-box">
                         <label for="password">Senha</label>
-                        <input type="password" name="password" id="password" placeholder="Digite sua senha" required>
+                        <input type="password" name="password" maxlength="16" id="password" placeholder="Digite sua senha" required>
                     </div>
 
                     <div class="input-box">
@@ -80,6 +80,32 @@
                         <input type="date" name="data_nasc" id="data_nasc" placeholder="Data de Nacimento" required>
                     </div>
                 </div>
+
+                <!--<div class="select">
+                    <div id="category-select">
+                        <label for="options-view-button">Selecione o tipo de usuario</label>
+                        <input type="checkbox" id="options-view-button">
+
+                        <div id="select-button">
+                            <div id="options-view-button">Cliente</div>
+                            <div id="chevrons">
+                                <i data-lucide="chevron-down"></i>
+                                <i data-lucide="chevron-up"></i>
+                            </div>
+                        </div>
+
+                        <label for="options-view-button">Usuario? Selecione a modalidade</label>
+                        <input type="checkbox" id="options-view-button">
+
+                        <div id="select-button">
+                            <div id="options-view-button">Modalidade</div>
+                            <div id="chevrons">
+                                <i data-lucide="chevron-down"></i>
+                                <i data-lucide="chevron-up"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>-->
 
                 <div class="continue-button">
                     <button>
@@ -91,9 +117,17 @@
 
             </form>
         </div>
+
         <div class="form-image">
             <img src="Imagens\workout-animate.svg" alt="Moça correndo">
         </div>
     </div>
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <script>
+        lucide.createIcons();
+    </script>
+    
 </body>
 </html>

@@ -6,6 +6,6 @@
     
     session_destroy();
 
-    header("Location: index.php");
+    echo "<script>window.location.href='/GymSite/index.php';</script>";
     exit;
 ?>

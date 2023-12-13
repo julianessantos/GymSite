@@ -9,7 +9,7 @@
     spl_autoload_register($print);
 
     define('HOST','localhost');
-    define('DATABASE','gymsite');
+    define('DATABASE','gymsite_novo');
     define('USER','root');
     define('PASSWORD','');
 

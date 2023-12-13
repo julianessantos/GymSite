@@ -1,8 +1,18 @@
 <?php
+
+    include('config.php');
+    Mysql::conectar();
+
     session_start();
     if(empty($_SESSION)){
         print "<script>location.href='index.php';</script>";
     }
+
+    //$consulta = "SELECT * FROM produto";
+    $consulta = "SELECT USUARIO.nome, EXERCICIO.nome_exer, TREINO.serie, TREINO.rept, TREINO.tipo_de_treino FROM TREINO INNER JOIN EXERCICIO ON TREINO.id_exercicio = EXERCICIO.id_exercicio INNER JOIN CLIENTE_ALUNO ON TREINO.id_cliente = CLIENTE_ALUNO.id_cliente INNER JOIN USUARIO ON CLIENTE_ALUNO.cpf_cliente = USUARIO.cpf";
+    $resultado= $conn ->query($consulta) or die($conn->error);
+
+    
 ?>
 
 <!DOCTYPE html>
@@ -65,10 +75,12 @@
                 </a>
             </li>
             <li>
-                <a href="#">
-                    <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
-                    <span class="title">Sing Out</span>
-                </a>
+                <?php
+                    print"<a href='classes\logout.php'>
+                    <span class='icon'><ion-icon name='log-out-outline'></ion-icon></span>
+                    <span class='title'>Sing Out</span></a>";
+
+                ?>
             </li>
         </ul>
         <div class="toggle"></div>
@@ -83,6 +95,28 @@
             </div>
         </div>
     </div>
+    
+   <!-- tabela
+    <div class="tabela">
+        <table>
+            <tr>
+                <td>id_produto</td>
+                <td>nome_produto</td>
+                <td>preco</td>
+                <td>quantidade</td>
+            </tr>
+
+            <?php while($dado = $resultado ->fetch_array()){ ?>
+                <tr>
+                    <td><?php echo $dado["nome_produto"]; ?></td>
+                    <td><?php echo $dado["preco"]; ?></td>
+                    <td><?php echo $dado["quantidade"]; ?></td>
+                </tr>
+            <?php }?>
+        </table>
+    </div>
+    -->
+
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 

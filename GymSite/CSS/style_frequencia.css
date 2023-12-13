@@ -23,13 +23,13 @@
 }
 
 .verde {
-    background-color: green;
+    background-color: rgb(116, 214, 116);
     color: white;
     border-radius: 15px 15px 15px 15px;
 }
 
 .vermelho {
-    background-color: red;
+    background-color: rgb(238, 68, 68);
     color: white;
     border-radius: 15px 15px 15px 15px;
 }
